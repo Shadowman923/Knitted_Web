@@ -22,3 +22,23 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Игнорируем зависимости
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+
+# Билд-файлы
+dist/
+build/
+
+# Логи
+*.log
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Кеши
+*.cache
+.DS_Store
