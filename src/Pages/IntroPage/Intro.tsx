@@ -94,7 +94,7 @@ export default function Intro() {
       <Card.Header>
         <Card.Title>Sign up</Card.Title>
         <Card.Description>
-          Fill in the form below to create an account
+          Писать не обящательно, вход просто по Sign in
         </Card.Description>
       </Card.Header>
     <Card.Body>
