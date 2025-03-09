@@ -1,12 +1,10 @@
 import Intro from "./Intro";
-import { Box }  from "@chakra-ui/react"
-
+import { Box } from "@chakra-ui/react";
 
 export default function FirstPage() {
-  
-    return (
-      <Box>
-        <Intro />
-      </Box>
-    )
-  }
+  return (
+    <Box>
+      <Intro />
+    </Box>
+  );
+}
