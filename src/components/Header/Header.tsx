@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/storeRedux";
 export default function Header() {
   const navigate = useNavigate();
-  const username = useSelector((state: RootState) => state.user.name);
+  const name = useSelector((state: RootState) => state.user.name);
   return (
     <Flex
       as="header"
@@ -29,7 +29,7 @@ export default function Header() {
         cursor="button"
       />
       <Box>
-        <Text fontSize="2xl">Welcome, {username || "Guest"}!</Text>
+        <Text fontSize="2xl">Welcome, {name || "Guest"}!</Text>
       </Box>
       <TabsComponent />
     </Flex>

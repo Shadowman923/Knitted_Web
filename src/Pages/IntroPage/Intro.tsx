@@ -9,35 +9,40 @@ import {
   useBreakpointValue,
   Image,
 } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
 import { Field } from "@/components/ui/field";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setName } from "@/store/storeRedux";
 
 export default function Intro() {
   const navigate = useNavigate();
+  //const dispatch = useDispatch();
   const leftValue = useBreakpointValue({ base: "50%", lg: "50%", xl: "20%" });
   const transformValue = useBreakpointValue({
     base: "translate(-50%, -50%)",
     lg: "translate(-50%, -50%)",
     xl: "none",
   });
+
+  // const [inputValue, setInputValue] = useState("");
   const [showCard, setShowCard] = useState(false);
+
+  //const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // setInputValue(e.target.value);
+  //};
+
+  //const handleSubmit = () => {
+  //  dispatch(setName(inputValue));
+  //  navigate("/main");
+  //};
+
   return (
-    <Box
-      position="relative"
-      w="100vw"
-      h="100vh"
-      overflow="hidden"
-      data-state="open"
-      _open={{
-        animationName: "fade-in",
-        animationDuration: "1000ms",
-      }}
-    >
+    <Box position="relative" w="100vw" h="100vh" overflow="hidden">
       <video
         autoPlay
-        //loop
         muted
+        //loop
         playsInline
         style={{
           position: "absolute",
@@ -120,7 +125,11 @@ export default function Intro() {
             <Card.Body>
               <Stack gap="4" w="full">
                 <Field label="First Name">
-                  <Input />
+                  <Input
+                  //type="text"
+                  //value={inputValue}
+                  //onChange={handleChange}
+                  />
                 </Field>
                 <Field label="Last Name">
                   <Input />
@@ -128,8 +137,15 @@ export default function Intro() {
               </Stack>
             </Card.Body>
             <Card.Footer justifyContent="flex-end">
-              <Button variant="outline">Cancel</Button>
-              <Button variant="outline">Sign in</Button>
+              <Button variant="outline" onClick={() => setShowCard(false)}>
+                Cancel
+              </Button>
+              <Button
+                variant="outline"
+                //onClick={handleSubmit}
+              >
+                Sign in
+              </Button>
             </Card.Footer>
           </Card.Root>
         </Flex>
