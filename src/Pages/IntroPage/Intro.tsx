@@ -36,7 +36,7 @@ export default function Intro() {
     >
       <video
         autoPlay
-        loop
+        //loop
         muted
         playsInline
         style={{
@@ -114,7 +114,7 @@ export default function Intro() {
             <Card.Header>
               <Card.Title>Sign up</Card.Title>
               <Card.Description>
-                Писать не обящательно, вход просто по Sign in
+                Писать не обязательно, вход просто по Sign in
               </Card.Description>
             </Card.Header>
             <Card.Body>
@@ -128,12 +128,8 @@ export default function Intro() {
               </Stack>
             </Card.Body>
             <Card.Footer justifyContent="flex-end">
-              <Button variant="outline" onClick={() => setShowCard(false)}>
-                Cancel
-              </Button>
-              <Button variant="solid" onClick={() => navigate("/main")}>
-                Sign in
-              </Button>
+              <Button variant="outline">Cancel</Button>
+              <Button variant="outline">Sign in</Button>
             </Card.Footer>
           </Card.Root>
         </Flex>
