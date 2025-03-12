@@ -1,8 +1,8 @@
 import { Box } from "@chakra-ui/react";
-import ItemList from "../ItemList";
+import ItemList from "@/components/item/ItemList";
 import Header from "@/components/Header/Header";
-import FirstPhoto from "./FirstPhoto";
-import FirstBlock from "./FirstBlock";
+import FirstPhoto from "./MainPageList/FirstPhoto";
+import FirstBlock from "./MainPageList/FirstBlock";
 
 export default function MainPage() {
   return (

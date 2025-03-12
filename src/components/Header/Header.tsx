@@ -3,10 +3,8 @@ import { useNavigate } from "react-router-dom";
 import TabsComponent from "../ui/tabs";
 import Menu from "./Menu";
 import { useSelector } from "react-redux";
-import { RootState } from "@/store/storeRedux";
 export default function Header() {
   const navigate = useNavigate();
-  const name = useSelector((state: RootState) => state.user.name);
   return (
     <Flex
       as="header"
@@ -29,7 +27,7 @@ export default function Header() {
         cursor="button"
       />
       <Box>
-        <Text fontSize="2xl">Welcome, {name || "Guest"}!</Text>
+        <Text></Text>
       </Box>
       <TabsComponent />
     </Flex>

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import FirstPage from "./Pages/IntroPage/FirstPage";
+import FirstPage from "./Pages/FirstPage";
 import NotFound from "./Pages/NotFound";
-import MainPage from "./Pages/AppPage/MainPageList/MainPage";
+import MainPage from "./Pages/MainPage";
 
 export default function App() {
   return (

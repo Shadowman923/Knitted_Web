@@ -12,12 +12,12 @@ import {
 import { Field } from "@/components/ui/field";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { setName } from "@/store/storeRedux";
+import { useDispatch, useSelector } from "react-redux";
+import { setName } from "@/store/userSlice";
 
 export default function Intro() {
   const navigate = useNavigate();
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const leftValue = useBreakpointValue({ base: "50%", lg: "50%", xl: "20%" });
   const transformValue = useBreakpointValue({
     base: "translate(-50%, -50%)",
@@ -25,17 +25,17 @@ export default function Intro() {
     xl: "none",
   });
 
-  // const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState("");
   const [showCard, setShowCard] = useState(false);
 
   //const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   // setInputValue(e.target.value);
   //};
 
-  //const handleSubmit = () => {
-  //  dispatch(setName(inputValue));
-  //  navigate("/main");
-  //};
+  const handleSubmit = () => {
+    dispatch(setName(inputValue));
+    navigate("/main");
+  };
 
   return (
     <Box position="relative" w="100vw" h="100vh" overflow="hidden">
@@ -126,9 +126,9 @@ export default function Intro() {
               <Stack gap="4" w="full">
                 <Field label="First Name">
                   <Input
-                  //type="text"
-                  //value={inputValue}
-                  //onChange={handleChange}
+                    type="text"
+                    value={inputValue}
+                    //onChange={handleChange}
                   />
                 </Field>
                 <Field label="Last Name">
@@ -140,10 +140,7 @@ export default function Intro() {
               <Button variant="outline" onClick={() => setShowCard(false)}>
                 Cancel
               </Button>
-              <Button
-                variant="outline"
-                //onClick={handleSubmit}
-              >
+              <Button variant="outline" onClick={handleSubmit}>
                 Sign in
               </Button>
             </Card.Footer>
